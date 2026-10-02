@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>NaviTools — Nautical Analytics, Vessel Intelligence</title>
+<meta name="description" content="NaviTools builds and deploys vessel data systems for the commercial fishing industry. Live on more than 70% of the active Belgian demersal fleet."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400&family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="site/styles.css?v=87"/>
+<link rel="icon" href="favicon.ico" sizes="any"/>
+<link rel="icon" type="image/png" href="assets/navitools-logo.png"/>
+</head>
+<body>
+
+<!-- ─────────── Top utility ─────────── -->
+<div class="utility">
+  <div class="container">
+    <span class="pill" data-i18n="utility.pill">Live on 70%+ of the Belgian demersal fleet</span>
+    <nav>
+      <div class="lang-switcher" aria-label="Language">
+        <button data-lang="en" onclick="setLang('en')" aria-pressed="true" aria-label="English"><span class="lang-pill" aria-hidden="true">EN</span></button>
+        <button data-lang="es" onclick="setLang('es')" aria-pressed="false" aria-label="Español"><span class="lang-pill" aria-hidden="true">ES</span></button>
+        <button data-lang="fr" onclick="setLang('fr')" aria-pressed="false" aria-label="Français"><span class="lang-pill" aria-hidden="true">FR</span></button>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<!-- ─────────── Primary nav ─────────── -->
+<div class="nav" id="main-nav">
+  <div class="container">
+    <a class="brand" href="#top">
+      <img src="assets/navitools-logo.png" alt="NaviTools" class="brand-logo"/>
+    </a>
+    <ul>
+      <li><a href="#approach" data-i18n="nav.approach">Approach</a></li>
+      <li><a href="#technology" data-i18n="nav.technology">Technology</a></li>
+      <li><a href="#proof" data-i18n="nav.proof">Proof</a></li>
+      <li><a href="#partners" data-i18n="nav.partners">Partners</a></li>
+    </ul>
+    <a class="cta" href="#contact">
+      <span data-i18n="nav.cta">Book a call</span>
+      <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6 H10 M7 3 L10 6 L7 9" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</div>
+
+<!-- Mobile menu — outside sticky nav so iOS doesn't clip it -->
+<div class="nav-mobile" id="nav-mobile">
+  <ul>
+    <li><a href="#approach" class="nav-mobile-link" data-i18n="nav.approach">Approach</a></li>
+    <li><a href="#technology" class="nav-mobile-link" data-i18n="nav.technology">Technology</a></li>
+    <li><a href="#proof" class="nav-mobile-link" data-i18n="nav.proof">Proof</a></li>
+    <li><a href="#partners" class="nav-mobile-link" data-i18n="nav.partners">Partners</a></li>
+  </ul>
+  <a class="cta nav-mobile-cta" href="#contact">
+    <span data-i18n="nav.cta">Book a call</span>
+    <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6 H10 M7 3 L10 6 L7 9" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+  </a>
+</div>
+<script>
+  (function(){
+    var toggle = document.getElementById('nav-toggle');
+    var menu   = document.getElementById('nav-mobile');
+    toggle.addEventListener('click', function(){
+      var open = menu.classList.toggle('is-open');
+      toggle.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open);
+    });
+    document.querySelectorAll('.nav-mobile-link, .nav-mobile-cta').forEach(function(el){
+      el.addEventListener('click', function(){
+        menu.classList.remove('is-open');
+        toggle.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', false);
+      });
+    });
+  })();
+</script>
+
+<!-- ─────────── Mandatory EU-Vlaanderen funding visibility ─────────── -->
+<div class="opening-funding">
+  <div class="container opening-funding__inner">
+    <div class="opening-funding__copy">
+      <span class="opening-funding__label" data-i18n="opening_funding.label">Co-funded by</span>
+      <p class="opening-funding__text" data-i18n="opening_funding.text">European Union and Flanders.</p>
+    </div>
+    <img
+      src="assets/logos/Logo%27s%20voor%20projecten%20-%20website/Individueel/EU/combilogo%20EU_bleke_achtergrond.png"
+      alt="EU-Vlaanderen combilogo"
+      class="opening-funding__logo"
+    />
+  </div>
+</div>
+
+<!-- ─────────── Hero ─────────── -->
+<section id="top" class="hero" data-screen-label="01 Hero">
+  <div class="container">
+    <div class="hero-eyebrow eyebrow"><span class="dot"></span><span data-i18n="hero.eyebrow">Nautical · Analytics · Vessel · Intelligence</span></div>
+    <div class="hero-copy-shift">
+      <h1 data-i18n-html="hero.h1">The data your vessel <em>already generates.</em> Finally working for your business.</h1>
+      <p class="hero-tagline" data-i18n="hero.tagline">One box on board. A complete data picture for your fleet, your science, and your sector.</p>
+      <ul class="hero-pillars">
+        <li><span class="pillar-label" data-i18n="hero.pillar_skipper_label">Skipper</span> <span data-i18n="hero.pillar_skipper_text">less paperwork, operational insight</span></li>
+        <li><span class="pillar-label" data-i18n="hero.pillar_science_label">Science</span> <span data-i18n="hero.pillar_science_text">research-grade data, every trip</span></li>
+        <li><span class="pillar-label" data-i18n="hero.pillar_policy_label">Policy</span> <span data-i18n="hero.pillar_policy_text">the evidence base Europe demands</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="hero-figure">
+    <img src="assets/pedro-hero-image.png" srcset="assets/pedro-hero-image-480.webp 480w, assets/pedro-hero-image-960.webp 960w, assets/pedro-hero-image-1200.webp 1200w" sizes="(min-width: 860px) 32vw, 0px" alt="Vessel bridge view" decoding="async"/>
+  </div>
+</section>
+
+<!-- ─────────── Hero stats bar ─────────── -->
+<div class="hero-stats-bar">
+  <div class="container">
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="num">70<sup>%+</sup></div>
+        <div class="lbl" data-i18n="stats.fleet">Of the active Belgian demersal fleet running NaviTools today</div>
+      </div>
+      <div class="stat">
+        <div class="num">2026</div>
+        <div class="lbl" data-i18n="stats.eu2026">Ready for the EU traceability obligation in force this year</div>
+      </div>
+      <div class="stat">
+        <div class="num">EU</div>
+        <div class="lbl" data-i18n="stats.eu">Recognised at EU level as an example of data-driven fisheries</div>
+      </div>
+      <div class="stat">
+        <div class="num">ILVO</div>
+        <div class="lbl" data-i18n="stats.ilvo">Scientific collaboration on research-grade data integration</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────── OceanBox co-brand ribbon ─────────── -->
+<div class="cobrand">
+  <div class="container">
+    <span class="cobrand-label" data-i18n="cobrand.enabled_by">Enabled by</span>
+    <img src="assets/logos/oceanbox-logo-rightalign.png" alt="OceanBox" class="cobrand-logo"/>
+    <span class="cobrand-desc" data-i18n="cobrand.desc">Data Processing Technology</span>
+  </div>
+</div>
+
+<!-- ─────────── The Problem ─────────── -->
+<section id="approach" data-screen-label="02 Problem">
+  <div class="container">
+    <div class="section-head">
+      <div class="lhs">
+        <div class="eyebrow" data-i18n="problem.eyebrow">01 — The problem</div>
+        <h2 data-i18n="problem.h2">Fishing vessels generate valuable data. Most of it is lost at sea.</h2>
+      </div>
+      <div class="rhs" data-i18n="problem.rhs">
+        While compliance requirements grow, the data needed to meet them is already being produced on board. It simply never reaches the people who can act on it.
+      </div>
+    </div>
+
+    <div class="problem-split">
+      <figure class="problem-figure">
+        <img src="assets/vessel-data-sea.jpg" srcset="assets/vessel-data-sea-480.webp 480w, assets/vessel-data-sea-960.webp 960w, assets/vessel-data-sea-1024.webp 1024w" sizes="(max-width: 800px) 100vw, 38vw" alt="A trawler at sea, surrounded by data overlays — data generated, value lost" loading="lazy" decoding="async"/>
+      </figure>
+      <div class="problem-rhs">
+        <ol class="problem-list">
+          <li class="problem-item">
+            <span class="problem-item__num">01</span>
+            <span class="problem-item__label" data-i18n="problem.meta1_k">Compliance</span>
+            <span class="problem-item__body" data-i18n="problem.meta1_v">EU traceability mandate from January 2026 — data required, not yet captured at sector scale.</span>
+          </li>
+          <li class="problem-item">
+            <span class="problem-item__num">02</span>
+            <span class="problem-item__label" data-i18n="problem.meta2_k">Operational cost</span>
+            <span class="problem-item__body" data-i18n="problem.meta2_v">Margins erode trip by trip with no per-haul fuel evidence on board.</span>
+          </li>
+          <li class="problem-item">
+            <span class="problem-item__num">03</span>
+            <span class="problem-item__label" data-i18n="problem.meta3_k">Political risk</span>
+            <span class="problem-item__body" data-i18n="problem.meta3_v">Quota debates run without operational evidence from the fleet.</span>
+          </li>
+          <li class="problem-item">
+            <span class="problem-item__num">04</span>
+            <span class="problem-item__label" data-i18n="problem.meta4_k">Scientific gap</span>
+            <span class="problem-item__body" data-i18n="problem.meta4_v">Stock models rely on infrequent surveys, not continuous fleet data.</span>
+          </li>
+        </ol>
+        <p class="problem-closer" data-i18n="problem.closer">NaviTools was built to capture this missing data layer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ─────────── For the fisherman (navy / tech value) ─────────── -->
+<section id="fisherman" class="dark" data-screen-label="03 For the fisherman">
+  <div class="container">
+    <div class="section-head">
+      <div class="lhs">
+        <div class="eyebrow" data-i18n="fisherman.eyebrow">02 — For the fisherman</div>
+        <h2 data-i18n="fisherman.h2">The technology that takes work off the deck.</h2>
+      </div>
+      <div class="rhs" style="color: rgba(255,255,255,0.7);" data-i18n="fisherman.rhs">
+        NaviTools was conceived by a former skipper. Every feature is measured against one question: does it save time, money, or trouble on board?
+      </div>
+    </div>
+
+    <div class="fisherman">
+      <div class="lhs">
+        <div class="idx" data-i18n="fisherman.idx">Direct value, every trip</div>
+        <h3 data-i18n="fisherman.h3">Less paperwork. More margin. Real protection.</h3>
+        <ul>
+          <li><span><b data-i18n="fisherman.li1_term">Your e-logbook data, prepared for you.</b> <span data-i18n="fisherman.li1_text">Position, depth, gear, species, weights and discards are captured from sensors all trip long. When it is time to submit the e-logbook, the fields are ready — you confirm, you do not type.</span></span></li>
+          <li><span><b data-i18n="fisherman.li2_term">Full EU traceability, hold to buyer.</b> <span data-i18n="fisherman.li2_text">NaviTools delivers the complete traceability solution the EU now requires. Each box is fixed to a position in the hold (FishGrid), scanned once by RFID at landing, and tracked through the auction to the buyer — end-to-end, on every trip. Already implemented on five vessels (below).</span></span></li>
+          <li><span><b data-i18n="fisherman.li3_term">Fuel cost per haul, per trip, per kilo of fish.</b> <span data-i18n="fisherman.li3_text">Liters per hour live. Liters per kilo of catch the moment a haul comes on deck. Spot the tow that earned nothing. See in euros whether a hull cleaning, a new propeller or a different RPM actually paid back.</span></span></li>
+          <li><span><b data-i18n="fisherman.li4_term">Evidence on file before it's asked for.</b> <span data-i18n="fisherman.li4_text">Net damage, gear loss, auction-weight disputes, near-misses: position, depth, course, hydraulic pressure and per-box catch composition are timestamped and stored. Insurance, surveyor, lawyer — the record is there when they need it.</span></span></li>
+          <li><span><b data-i18n="fisherman.li5_term">Your grounds, mapped from your own hauls.</b> <span data-i18n="fisherman.li5_text">Catch-per-hour by depth, bottom type and season — built trip after trip from data you already generate. The pattern no skipper can hold in their head over a 20-year career, written down and searchable.</span></span></li>
+          <li><span><b data-i18n="fisherman.li6_term">Margin per trip, while you are still fishing.</b> <span data-i18n="fisherman.li6_text">Catch value minus fuel burn minus crew share, recalculated as each haul lands. Visserij Verduurzaamt premium tracked separately. Stay or steam — decide with numbers, not just gut feel.</span></span></li>
+        </ul>
+      </div>
+      <div class="rhs fisherman-stack">
+        <img src="assets/pedro-hero-image.png" srcset="assets/pedro-hero-image-480.webp 480w, assets/pedro-hero-image-960.webp 960w, assets/pedro-hero-image-1200.webp 1200w" sizes="(max-width: 900px) 100vw, 32vw" alt="Pedro Rappé — skipper on deck" loading="lazy" decoding="async"/>
+        <img src="assets/bleubox-hero-clean.png?v=2" srcset="assets/bleubox-hero-clean-480.webp?v=2 480w, assets/bleubox-hero-clean-960.webp?v=2 960w, assets/bleubox-hero-clean-1024.webp?v=2 1024w" sizes="(max-width: 900px) 100vw, 32vw" alt="NaviTools BleuBox installed on a vessel, wired to the onboard data concentrator" class="fisherman-bleubox" loading="lazy" decoding="async"/>
+      </div>
+    </div>
+
+    <!-- Regulatory callout: EU traceability obligation, Jan 2026 -->
+    <aside class="reg-callout" aria-label="EU traceability obligation">
+      <div class="reg-callout__date">
+        <span class="reg-callout__date-num" data-i18n="fisherman.reg_date">Jan 2026</span>
+        <span class="reg-callout__date-status" data-i18n="fisherman.reg_status">In force across the EU</span>
+      </div>
+      <div class="reg-callout__body">
+        <span class="reg-callout__eyebrow" data-i18n="fisherman.reg_eyebrow">EU traceability obligation</span>
+        <h4 class="reg-callout__h" data-i18n="fisherman.reg_h">Compliance, on the deadline.</h4>
+        <p class="reg-callout__p" data-i18n="fisherman.reg_body">From January 2026, the EU traceability obligation requires every commercial fishing vessel to record and transmit catch data with a new level of granularity. NaviTools fleets are already there.</p>
+      </div>
+    </aside>
+
+    <!-- Traceability precedent: 5 vessels showcase (cards driven by data/vessels.json) -->
+    <div class="fisherman-precedent">
+      <div class="precedent-head">
+        <span class="precedent-eyebrow" data-i18n="fisherman.precedent_eyebrow">Precedent — running in production</span>
+        <p class="precedent-lead" data-i18n="fisherman.precedent_lead">Full traceability is not a plan. It is already implemented on five vessels.</p>
+        <p class="precedent-note" data-i18n="fisherman.precedent_note">Click a vessel for deployment details.</p>
+      </div>
+      <div class="app-strip">
+        <figure class="app-strip__item">
+          <img src="assets/app-hold-loading.jpg" srcset="assets/app-hold-loading-480.webp 480w, assets/app-hold-loading-960.webp 960w" sizes="(max-width: 700px) 100vw, 30vw" alt="Crew positioning fish boxes in the hold" loading="lazy" decoding="async"/>
+          <figcaption data-i18n="fisherman.app_cap2">Boxes positioned in the hold against FishGrid coordinates.</figcaption>
+        </figure>
+        <figure class="app-strip__item">
+          <img src="assets/app-skipper-grid.jpg" srcset="assets/app-skipper-grid-480.webp 480w, assets/app-skipper-grid-960.webp 960w" sizes="(max-width: 700px) 100vw, 30vw" alt="Skipper logging a box on the FishGrid app — colour-coded species grid" loading="lazy" decoding="async"/>
+          <figcaption data-i18n="fisherman.app_cap1">On-deck logging — species, weight and condition recorded per box.</figcaption>
+        </figure>
+        <figure class="app-strip__item">
+          <img src="assets/app-fishgrid-3d.jpg" srcset="assets/app-fishgrid-3d-480.webp 480w, assets/app-fishgrid-3d-960.webp 960w" sizes="(max-width: 700px) 100vw, 30vw" alt="3D digital twin of the Z483 hold with every box mapped to its slot" loading="lazy" decoding="async"/>
+          <figcaption data-i18n="fisherman.app_cap3">Real-time 3D twin of the hold — every box pinned to its slot.</figcaption>
+        </figure>
+      </div>
+      <div class="vessel-grid" id="vessel-grid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Vessel deployment modal (populated by JS) -->
+<div id="vessel-modal" class="vessel-modal" hidden aria-hidden="true">
+  <div class="vessel-modal__backdrop" data-close></div>
+  <div class="vessel-modal__panel" role="dialog" aria-modal="true" aria-labelledby="vessel-modal-title">
+    <button class="vessel-modal__close" data-close aria-label="Close">&times;</button>
+    <div class="vessel-modal__body" id="vessel-modal-body"><!-- populated by JS --></div>
+  </div>
+</div>
+<script>
+  (function(){
+    fetch('data/vessels.json')
+      .then(function(r){ return r.json(); })
+      .then(function(vessels){
+        var grid = document.getElementById('vessel-grid');
+        if (!grid) return;
+        grid.innerHTML = vessels.map(function(v){
+          return '<article class="vessel-card">' +
+            '<figure class="vessel-card__photo">' +
+              '<img src="' + v.image + '" alt="' + (v.name || 'Vessel') + ' — photo placeholder" loading="lazy"/>' +
+            '</figure>' +
+            '<div class="vessel-card__body">' +
+              '<h4 class="vessel-card__name">' + v.name + '</h4>' +
+              '<p class="vessel-card__caption">' + (v.caption || '') + '</p>' +
+              '<button class="vessel-card__btn" data-vessel="' + v.id + '" type="button" data-i18n="fisherman.vessel_details_btn">Deployment details</button>' +
+            '</div>' +
+          '</article>';
+        }).join('');
+        if (window.NTApplyI18n) window.NTApplyI18n();
+
+        var modal = document.getElementById('vessel-modal');
+        var modalBody = document.getElementById('vessel-modal-body');
+
+        function openModal(v){
+          modalBody.innerHTML =
+            '<h3 id="vessel-modal-title" class="vessel-modal__name">' + v.name + '</h3>' +
+            (v.caption ? '<p class="vessel-modal__caption">' + v.caption + '</p>' : '') +
+            '<dl class="vessel-modal__rows">' +
+              (v.rows || []).map(function(r){
+                return '<dt class="vessel-modal__row-label">' + r.label + '</dt>' +
+                       '<dd class="vessel-modal__row-value">' + r.value + '</dd>';
+              }).join('') +
+            '</dl>' +
+            (v.quote ? '<blockquote class="vessel-modal__quote">' + v.quote + '</blockquote>' : '') +
+            (v.source_url ? '<p class="vessel-modal__source">Photo &amp; AIS data: <a href="' + v.source_url + '" target="_blank" rel="noopener">' + (v.source_label || 'source') + ' &#8599;</a></p>' : '');
+          modal.hidden = false;
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        }
+        function closeModal(){
+          modal.hidden = true;
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        }
+
+        grid.addEventListener('click', function(e){
+          var btn = e.target.closest('[data-vessel]');
+          if (!btn) return;
+          var id = btn.getAttribute('data-vessel');
+          var v = vessels.find(function(x){ return x.id === id; });
+          if (v) openModal(v);
+        });
+        modal.addEventListener('click', function(e){
+          if (e.target.hasAttribute('data-close')) closeModal();
+        });
+        document.addEventListener('keydown', function(e){
+          if (e.key === 'Escape' && !modal.hidden) closeModal();
+        });
+      })
+      .catch(function(e){ console.warn('vessels load failed', e); });
+  })();
+</script>
+
+<!-- ─────────── For the community (paper / sector + science) ─────────── -->
+<section id="community" data-screen-label="04 For the community">
+  <div class="container">
+    <div class="section-head">
+      <div class="lhs">
+        <div class="eyebrow" data-i18n="community.eyebrow">03 — For the community</div>
+        <h2 data-i18n="community.h2">The same data, working for the sector and for the science.</h2>
+      </div>
+      <div class="rhs">
+        <div class="community-photo">
+          <img src="assets/catch-data.jpg" alt="NaviTools catch data in action"/>
+        </div>
+        <span data-i18n="community.rhs">Beyond the wheelhouse, NaviTools strengthens the institutions that the fishing community depends on — producer organisations, scientific institutes, and the European policy framework.</span>
+      </div>
+    </div>
+
+    <div class="audiences cols-2">
+      <div class="col">
+        <div class="idx" data-i18n="community.col1_idx">Sector &amp; governments</div>
+        <h3 data-i18n="community.col1_h3">Transparency as the foundation of trust.</h3>
+        <ul>
+          <li><span><b data-i18n="community.col1_li1_term">Demonstrable practice:</b> <span data-i18n="community.col1_li1_text">what is caught, how, and under what conditions.</span></span></li>
+          <li><span><b data-i18n="community.col1_li2_term">EU 2026 ready</b> <span data-i18n="community.col1_li2_text">— traceability obligation built in from day one.</span></span></li>
+          <li><span><b data-i18n="community.col1_li3_term">Sustainability indicators:</b> <span data-i18n="community.col1_li3_text">fuel intensity, seabed contact, bycatch.</span></span></li>
+          <li><span><b data-i18n="community.col1_li4_term">Recognised by ICES</b> <span data-i18n="community.col1_li4_text">and at EU level as an example of data-driven fisheries.</span></span></li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="idx" data-i18n="community.col2_idx">Science &amp; policy</div>
+        <h3 data-i18n="community.col2_h3">Real-time data for assessments that matter.</h3>
+        <ul>
+          <li><span><b data-i18n="community.col2_li1_term">Stock assessments enriched</b> <span data-i18n="community.col2_li1_text">— faster and more granular than traditional surveys.</span></span></li>
+          <li><span><b data-i18n="community.col2_li2_term">Modular architecture</b> <span data-i18n="community.col2_li2_text">in collaboration with ILVO and international research institutes.</span></span></li>
+          <li><span><b data-i18n="community.col2_li3_term">Certified data governance</b> <span data-i18n="community.col2_li3_text">— vessel owners retain full ownership.</span></span></li>
+          <li><span><b data-i18n="community.col2_li4_term">Open scientific pipelines</b> <span data-i18n="community.col2_li4_text">— no black boxes; models stay transparent.</span></span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── Technology — what sets it apart ─────────── -->
+<section id="technology" class="dark" data-screen-label="04 Technology">
+  <div class="container">
+    <div class="section-head">
+      <div class="lhs">
+        <div class="eyebrow" data-i18n="tech.eyebrow">04 — What sets it apart</div>
+        <h2 data-i18n="tech.h2">Built on deliberate choices — not on hype.</h2>
+      </div>
+      <div class="rhs" style="color: rgba(255,255,255,0.7);" data-i18n="tech.rhs">
+        NaviTools is a system, not a single product: vessel-hardened hardware, enterprise cloud, open-source scientific modules, and a new generation of AI tools that turn raw signal into decisions.
+      </div>
+    </div>
+
+    <!-- Cards 01–05 -->
+    <div class="tech-grid">
+
+      <article class="tc tc--img">
+        <figure class="tc-photo">
+          <img src="assets/navitools-hardware-unit.jpg" alt="NaviTools purpose-built hardware unit"/>
+          <figcaption data-i18n="tech.c1_caption">Minister of Agriculture &amp; Fisheries Hilde Crevits holding the BleuBox, with Pedro Rappé.</figcaption>
+        </figure>
+        <div class="tc-body">
+          <span class="tc-num">01</span>
+          <h3 class="tc-title" data-i18n="tech.c1_h3">Purpose-built hardware</h3>
+          <p class="tc-desc" data-i18n="tech.c1_desc">Purpose-built collection unit, hardened for working vessels. Dedicated processing, minimal maintenance, long service life.</p>
+        </div>
+      </article>
+
+      <article class="tc tc--img">
+        <figure class="tc-photo">
+          <img src="assets/navitools-cloud-network.png" alt="NaviTools cloud network infrastructure"/>
+        </figure>
+        <div class="tc-body">
+          <span class="tc-num">02</span>
+          <h3 class="tc-title" data-i18n="tech.c2_h3">Industry-standard cloud infrastructure</h3>
+          <p class="tc-desc" data-i18n="tech.c2_desc">Data processing and storage on enterprise-grade cloud infrastructure — the same standards used by global research institutions and governments. Reliable, scalable, auditable.</p>
+        </div>
+      </article>
+
+      <article class="tc tc--img">
+        <figure class="tc-photo">
+          <img src="assets/science-module.png?v=2"
+               srcset="assets/science-module-480.webp?v=2 480w, assets/science-module-960.webp?v=2 960w, assets/science-module-1024.webp?v=2 1024w"
+               sizes="(max-width: 700px) 100vw, 33vw"
+               alt="Diagram: Research methods as a module. Data input → data prep → research methods (a plug-in module the user chooses) → results → delivery → decisions. Plug in. Process. Decide. Swap in different methods as needed; same pipeline, more flexibility."
+               loading="lazy" decoding="async"/>
+        </figure>
+        <div class="tc-body">
+          <span class="tc-num">03</span>
+          <h3 class="tc-title" data-i18n="tech.c3_h3">Open-source scientific integration</h3>
+          <p class="tc-desc" data-i18n="tech.c3_desc">Research modules — stock assessment, species distribution, environmental data pipelines — plug in as modular, open-source components. No black boxes.</p>
+        </div>
+      </article>
+
+      <article class="tc tc--img">
+        <figure class="tc-photo">
+          <img src="assets/skipper-geert-van-der-plas.jpg" alt="Skipper Geert van der Plas, W-145"/>
+          <figcaption data-i18n="tech.c4_caption">"W-145's skipper Geert van der Plas is positive about the benefits of gathering data."</figcaption>
+        </figure>
+        <div class="tc-body">
+          <span class="tc-num">04</span>
+          <h3 class="tc-title" data-i18n="tech.c4_h3">Designed by fishermen, for fishermen</h3>
+          <p class="tc-desc" data-i18n="tech.c4_desc">Conceived from the deck up, by a former commercial skipper. Practical first, data-rich second, complex only when necessary.</p>
+        </div>
+      </article>
+
+      <article class="tc tc--img">
+        <figure class="tc-photo">
+          <img src="assets/data-governance.png?v=2"
+               srcset="assets/data-governance-480.webp?v=2 480w, assets/data-governance-960.webp?v=2 960w, assets/data-governance-1024.webp?v=2 1024w"
+               sizes="(max-width: 700px) 100vw, 33vw"
+               alt="Diagram: vessel data enters an encrypted vault; the skipper decides who is authorised — research institutions and data processors get read-only, time- or purpose-limited access; regulatory bodies and public third parties are not authorised. Every access is audit-logged."
+               loading="lazy" decoding="async"/>
+        </figure>
+        <div class="tc-body">
+          <span class="tc-num">05</span>
+          <h3 class="tc-title" data-i18n="tech.c5_h3">Certified data governance</h3>
+          <p class="tc-desc" data-i18n="tech.c5_desc">Vessel owners retain full ownership of their data. They decide who accesses it, on what terms, for which purpose.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Card 06 — AI feature -->
+    <div class="tech">
+      <div class="card c6">
+        <div class="badge" data-i18n="tech.c6_badge">06 — In active development &amp; deployment</div>
+        <h3 data-i18n="tech.c6_h3">Agentic AI and advanced modelling</h3>
+        <p style="max-width: 70ch;" data-i18n="tech.c6_desc">AI agents handle the heavy work: crunching trip data, building dashboards, running predictive models that sharpen as more vessels contribute. On deck, the same agents make that data accessible in plain language — a skipper or fleet manager can ask a question and get an answer on their own phone or tablet. No new interface to learn — the data comes to them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── Proof ─────────── -->
+<section id="proof" data-screen-label="05 Proof">
+  <div class="container">
+    <div class="section-head">
+      <div class="lhs">
+        <div class="eyebrow" data-i18n="proof.eyebrow">05 — Proof</div>
+        <h2 data-i18n="proof.h2">Not a pilot. A platform at fleet scale.</h2>
+      </div>
+      <div class="rhs" data-i18n="proof.rhs">
+        VisTools, the Belgian implementation of NaviTools, is one of the most widely deployed vessel data systems in European demersal fisheries — live, in daily use, and adopted at scale.
+      </div>
+    </div>
+  </div>
+
+  <!-- Full-bleed fleet photo with 70%+ stat overlay -->
+  <div class="proof-cinematic">
+    <img src="assets/fleet-at-sea.jpg" alt="Belgian fishing vessel at sea — NaviTools fleet"/>
+    <div class="proof-cinematic-overlay">
+      <div class="proof-cinematic-stat">
+        <div class="big">70<sup>%+</sup></div>
+        <p class="serif" data-i18n="proof.stat_text">of the active Belgian demersal fishing fleet runs on the NaviTools platform today.</p>
+        <div class="source" data-i18n="proof.stat_source">Source: VisTools deployment, 2026 · Belgian demersal fleet, active vessels</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Partner credentials strip -->
+  <div class="proof-strip proof-strip--contained">
+    <div class="proof-strip-item">
+      <div class="proof-strip-label" data-i18n="proof.strip1_label">Scientific partner</div>
+      <div class="it-logos">
+        <img src="assets/logos/ilvo-logo.png" alt="ILVO" class="it-logo"/>
+      </div>
+      <div class="proof-strip-desc" data-i18n="proof.strip1_desc">Flemish Institute for Agricultural, Fisheries and Food Research</div>
+    </div>
+    <div class="proof-strip-item">
+      <div class="proof-strip-label" data-i18n="proof.strip2_label">Industry backing</div>
+      <div class="it-logos">
+        <img src="assets/logos/BFPO-logo.png" alt="BFPO" class="it-logo bfpo-logo"/>
+      </div>
+      <div class="proof-strip-desc" data-i18n="proof.strip2_desc">Belgian fishing industry producer organisation</div>
+    </div>
+    <div class="proof-strip-item">
+      <div class="proof-strip-label" data-i18n="proof.strip3_label">European recognition</div>
+      <div class="it-logos">
+        <img src="assets/logos/european-commission-logo.png" alt="European Commission" class="it-logo"/>
+        <img src="assets/logos/ices-logo.png" alt="ICES" class="it-logo"/>
+      </div>
+      <div class="proof-strip-desc" data-i18n="proof.strip3_desc">Cited at EU and ICES level as an example of data-driven fisheries</div>
+    </div>
+    <div class="proof-strip-item">
+      <div class="proof-strip-label" data-i18n="proof.strip4_label">Funding</div>
+      <div class="it-logos">
+        <img src="assets/logos/Logo%27s%20voor%20projecten%20-%20website/Individueel/EU/combilogo%20EU_bleke_achtergrond.png" alt="European Union and Flanders funding logo" class="it-logo it-logo--funding-eu"/>
+        <img src="assets/logos/Logo%27s%20voor%20projecten%20-%20website/Individueel/ZeeBONK/logo%20zeebonk.png" alt="ZeeBONK" class="it-logo it-logo--funding-zeebonk"/>
+        <img src="assets/logos/west-vlaanderen-logo.png" alt="Provincie West-Vlaanderen" class="it-logo"/>
+        <img src="assets/logos/agentschap-lz-logo.png" alt="Agentschap Landbouw &amp; Visserij" class="it-logo"/>
+      </div>
+      <div class="proof-strip-desc" data-i18n="proof.strip4_desc">With financial support from the European Union, ZeeBONK, Provincie West-Vlaanderen and Agentschap Landbouw en Visserij</div>
+    </div>
+  </div>
+
+  <!-- Map + VIStools — two columns -->
+  <div class="container">
+    <div class="proof-bottom-row">
+
+      <!-- Left: deployment map -->
+      <div class="proof-card">
+        <div class="eyebrow proof-card__eyebrow" data-i18n="proof.map_eyebrow">Active deployments — fleet coverage</div>
+        <div class="proof-card__body">
+          <div class="proof-card__visual proof-card__visual--map">
+            <div id="proof-map-wrap"></div>
+            <div class="map-legend">
+              <span class="legend-bar"></span>
+              <span class="legend-hi">100%</span>
+            </div>
+          </div>
+          <p class="proof-card__desc" data-i18n="proof.map_desc">NaviTools is live on 70%+ of the active Belgian demersal fleet, with growing coverage in the Netherlands.</p>
+        </div>
+      </div>
+
+      <!-- Right: VIStools -->
+      <div class="proof-card">
+        <div class="eyebrow proof-card__eyebrow" data-i18n="proof.vistools_eyebrow">VIStools — intelligence layer</div>
+        <div class="proof-card__body">
+          <div class="proof-card__visual">
+            <img src="assets/vistools-vessel-dataplatform.jpg" alt="VIStools — vessel as data platform"/>
+          </div>
+          <p class="proof-card__desc" data-i18n="proof.vistools_desc">VIStools is the research and skipper-facing analytics platform built on the NaviTools BleuBox data concentrator. Automated sensor data from each trip feeds a live view of catch composition, fuel consumption, and revenue per haul — accessible on board and online.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <script>
+    const NAVITOOLS_COVERAGE = { 'BE': 70, 'NL': 10 };
+    fetch('assets/europe.svg')
+      .then(r => r.text())
+      .then(svg => {
+        document.getElementById('proof-map-wrap').innerHTML = svg;
+        Object.entries(NAVITOOLS_COVERAGE).forEach(([iso, pct]) => {
+          const el = document.getElementById(iso);
+          if (!el) return;
+          const opacity = 0.22 + (pct / 100) * 0.78;
+          const fill = '#E8531F';
+          el.classList.add('active');
+          // Set directly on element and its paths — CSS var() on dynamic SVGs
+          // is unreliable in Chromium (Edge). Inline styles are cross-browser safe.
+          const targets = el.tagName.toLowerCase() === 'path'
+            ? [el]
+            : Array.from(el.querySelectorAll('path'));
+          targets.forEach(p => {
+            p.style.fill = fill;
+            p.style.opacity = opacity.toFixed(2);
+          });
+        });
+      });
+  </script>
+
+  <!-- Video context -->
+  <div class="container">
+    <div class="proof-video-row">
+      <div class="eyebrow proof-video-eyebrow" data-i18n="proof.video_eyebrow">The rationale — from the field</div>
+      <div class="proof-video-grid">
+
+        <div class="proof-video-card">
+          <div class="proof-video-wrap">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/VXi_bNJNkEE"
+              title="Is this the Tech to build a Regenerative Fishery?"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+          <p class="proof-video-label" data-i18n="proof.video1_label">Is this the Tech to build a Regenerative Fishery?</p>
+        </div>
+
+        <div class="proof-video-card">
+          <div class="proof-video-wrap">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/AfPuaicy1WQ"
+              title="What Regenerative Fishing Could Actually Look Like"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+          <p class="proof-video-label" data-i18n="proof.video2_label">What Regenerative Fishing Could Actually Look Like</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ─────────── Partners ─────────── -->
+<section id="partners" data-screen-label="07 Partners">
+  <div class="container">
+    <div class="section-head">
+      <div class="lhs">
+        <div class="eyebrow" data-i18n="partners.eyebrow">06 — Partners &amp; ecosystem</div>
+        <h2 data-i18n="partners.h2">Working with the institutions that shape European fisheries.</h2>
+      </div>
+      <div class="rhs" data-i18n="partners.rhs">
+        Technology, sector, research and public stakeholders supporting the NaviTools platform.
+      </div>
+    </div>
+
+    <div class="partners-grid">
+      <div class="cell bfpo-cell"><img src="assets/logos/BFPO-logo.png" alt="BFPO logo" class="bfpo-grid-logo"/></div>
+      <div class="cell"><img src="assets/logos/ilvo-logo.png" alt="ILVO logo"/></div>
+      <div class="cell"><img src="assets/logos/european-commission-logo.png" alt="European Commission logo"/></div>
+      <div class="cell"><img src="assets/logos/west-vlaanderen-logo.png" alt="Provincie West-Vlaanderen logo"/></div>
+      <div class="cell"><img src="assets/logos/agentschap-lz-logo.png" alt="Agentschap Landbouw en Zeevisserij logo"/></div>
+      <div class="cell"><img src="assets/logos/wur-logo.png" alt="Wageningen University and Research logo"/></div>
+      <div class="cell"><img src="assets/logos/visserij-verduurzaamt-logo.png" alt="Visserij Verduurzaamt logo"/></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── Press & recognition ─────────── -->
+<section id="press" data-screen-label="08 Press">
+  <div class="container">
+    <div class="section-head">
+      <div class="lhs">
+        <div class="eyebrow" data-i18n="press.eyebrow">07 — Press &amp; recognition</div>
+        <h2 data-i18n="press.h2">In the press. At EU level. In daily use.</h2>
+      </div>
+      <div class="rhs" data-i18n="press.rhs">
+        A selection of features, interviews and institutional references covering NaviTools, VisTools, and the BleuBox data concentrator.
+      </div>
+    </div>
+    <div class="press-list" id="press-list"></div>
+  </div>
+</section>
+<script>
+  (function(){
+    fetch('data/press.json')
+      .then(function(r){ return r.json(); })
+      .then(function(items){
+        var list = document.getElementById('press-list');
+        if (!list) return;
+        var flagMap = { EN: 'EN', NL: 'NL', FR: 'FR', ES: 'ES', DE: 'DE', IT: 'IT', PT: 'PT' };
+        function flag(code) {
+          var c = flagMap[code] || String(code || '').toUpperCase();
+          return '<span class="press-item__lang" title="' + c + '" aria-label="' + c + '">' + c + '</span>';
+        }
+        var pubHeaderInserted = false;
+        list.innerHTML = items.map(function(it){
+          var divider = '';
+          if (it.category === 'publication' && !pubHeaderInserted) {
+            pubHeaderInserted = true;
+            divider = '<div class="press-list__divider"><span data-i18n="press.publications_head">Peer-reviewed publications</span></div>';
+          }
+          return divider +
+            '<a class="press-item" href="' + it.url + '" target="_blank" rel="noopener">' +
+            '<div class="press-item__meta">' +
+              '<span class="press-item__cat">' + it.category + '</span>' +
+              '<span class="press-item__sep">·</span>' +
+              '<span class="press-item__pub">' + it.publication + '</span>' +
+              '<span class="press-item__sep">·</span>' +
+              '<span class="press-item__date">' + it.date + '</span>' +
+              flag(it.lang) +
+            '</div>' +
+            '<h3 class="press-item__title">' + it.title + '<span class="press-item__arrow" aria-hidden="true">→</span></h3>' +
+          '</a>';
+        }).join('');
+        if (window.NTApplyI18n) window.NTApplyI18n();
+      })
+      .catch(function(e){ console.warn('press load failed', e); });
+  })();
+</script>
+
+<!-- ─────────── Contact ─────────── -->
+<section id="contact" class="dark" data-screen-label="09 Contact">
+  <div class="container">
+    <div class="contact">
+      <div>
+        <div class="eyebrow" data-i18n="contact.eyebrow">08 — Get in touch</div>
+        <h2 data-i18n="contact.h2">Let's talk about what your fleet's data can do.</h2>
+        <p class="sub" data-i18n="contact.sub">For institutional partners, governments, funders and international organisations. We typically respond within two business days.</p>
+
+        <div class="direct">
+          <div><div class="k" data-i18n="contact.email_k">Email</div><div class="v">info@navitools.be</div></div>
+          <div><div class="k" data-i18n="contact.basedin_k">Based in</div><div class="v" data-i18n="contact.basedin_v">Belgium · serving Europe and beyond</div></div>
+        </div>
+      </div>
+
+      <form class="card-form" onsubmit="event.preventDefault(); alert('Thanks — this is a placeholder form.');">
+        <div class="field">
+          <label for="f-name" data-i18n="contact.label_name">Name</label>
+          <input id="f-name" name="name" type="text" placeholder="Your name" data-i18n-ph="contact.ph_name" required/>
+        </div>
+        <div class="field">
+          <label for="f-org" data-i18n="contact.label_org">Organisation</label>
+          <input id="f-org" name="org" type="text" placeholder="Institute · ministry · organisation" data-i18n-ph="contact.ph_org"/>
+        </div>
+        <div class="field">
+          <label for="f-email" data-i18n="contact.label_email">Email</label>
+          <input id="f-email" name="email" type="email" placeholder="you@organisation.eu" data-i18n-ph="contact.ph_email" required/>
+        </div>
+        <div class="field">
+          <label for="f-topic" data-i18n="contact.label_topic">I'd like to talk about</label>
+          <select id="f-topic" name="topic">
+            <option data-i18n-opt="contact.option1">A partnership or pilot</option>
+            <option data-i18n-opt="contact.option2">EU 2026 traceability readiness</option>
+            <option data-i18n-opt="contact.option3">Scientific data integration</option>
+            <option data-i18n-opt="contact.option4">Funding &amp; project collaboration</option>
+            <option data-i18n-opt="contact.option5">Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-msg" data-i18n="contact.label_msg">Message</label>
+          <textarea id="f-msg" name="message" placeholder="A few lines on what you have in mind." data-i18n-ph="contact.ph_msg"></textarea>
+        </div>
+        <button class="submit" type="submit">
+          <span data-i18n="contact.submit">Send message</span>
+          <svg viewBox="0 0 12 12" width="12" height="12" aria-hidden="true"><path d="M2 6 H10 M7 3 L10 6 L7 9" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── Footer ─────────── -->
+<footer data-screen-label="09 Footer">
+  <div class="container">
+    <div class="brand-block">
+      <div class="brand-name"><b>Navi</b>Tools</div>
+      <p style="margin-top: 12px; max-width: 36ch;" data-i18n="footer.tagline">Nautical analytics, vessel intelligence. Operational on more than 70% of the Belgian demersal fishing fleet.</p>
+    </div>
+    <div>
+      <h4 data-i18n="footer.nav_h">Navigate</h4>
+      <ul>
+        <li><a href="#approach" data-i18n="nav.approach">Approach</a></li>
+        <li><a href="#fisherman" data-i18n="footer.nav_value">Value</a></li>
+        <li><a href="#technology" data-i18n="nav.technology">Technology</a></li>
+        <li><a href="#proof" data-i18n="nav.proof">Proof</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.eco_h">Ecosystem</h4>
+      <ul>
+        <li><a href="#partners" data-i18n="nav.partners">Partners</a></li>
+        <li><a href="#" data-i18n="footer.eco_vistools">VisTools (BE)</a></li>
+        <li><a href="#press" data-i18n="footer.eco_press">Press &amp; recognition</a></li>
+        <li><a href="#" data-i18n="footer.eco_publications">Publications</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-i18n="footer.contact_h">Contact</h4>
+      <ul>
+        <li>info@navitools.be</li>
+        <li>Belgium</li>
+        <li><a href="#contact" data-i18n="nav.cta">Book a call</a></li>
+        <li><a href="#" data-i18n="footer.contact_linkedin">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <div class="meta">
+      <span data-i18n="footer.copyright">© 2026 NaviTools / OceanBox B.V. All rights reserved.</span>
+      <span data-i18n="footer.legal">Privacy · Legal · Cookies</span>
+    </div>
+  </div>
+</footer>
+
+<script src="site/i18n.js?v=10"></script>
+<script src="image-slot.js"></script>
+</body>
+</html>

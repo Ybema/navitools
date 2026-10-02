@@ -1,0 +1,109 @@
+[
+  {
+    "id": "v1",
+    "name": "Z510 — Dennis",
+    "image": "assets/vessel-dennis.jpg",
+    "caption": "Zeebrugge · Beam trawler · Built 2000",
+    "source_url": "https://www.vesselfinder.com/vessels/details/9215969",
+    "source_label": "VesselFinder",
+    "rows": [
+      { "label": "Port", "value": "Zeebrugge" },
+      { "label": "Built", "value": "2000" },
+      { "label": "Length × beam", "value": "37.96 × 9.00 m" },
+      { "label": "Gross tonnage", "value": "388 GT" },
+      { "label": "Gear", "value": "Beam trawler (TBB)" },
+      { "label": "IMO / MMSI", "value": "9215969 / 205246000" },
+      { "label": "Callsign", "value": "OPUF" },
+      { "label": "Live on NaviTools", "value": "TBD" },
+      { "label": "Traceability stack", "value": "FishGrid · RFID per box · auction tie-in · BleuChain" }
+    ],
+    "quote": ""
+  },
+  {
+    "id": "v2",
+    "name": "Z98 — Windroos",
+    "image": "assets/vessel-windroos.jpg",
+    "caption": "Zeebrugge · Beam trawler · Built 2021",
+    "source_url": "https://www.vesselfinder.com/vessels/details/9902110",
+    "source_label": "VesselFinder",
+    "rows": [
+      { "label": "Port", "value": "Zeebrugge" },
+      { "label": "Built", "value": "2021" },
+      { "label": "Length × beam", "value": "38.00 × 9.00 m" },
+      { "label": "Gross tonnage", "value": "385 GT" },
+      { "label": "Gear", "value": "Beam trawler (TBB)" },
+      { "label": "IMO / MMSI", "value": "9902110 / 205279000" },
+      { "label": "Callsign", "value": "OPDV" },
+      { "label": "Owner / operator", "value": "Rederij Aris (skipper-owner Ruben Ackx)" },
+      { "label": "Builder", "value": "Padmos Stellendam / Hoekman Shipbuilding Urk" },
+      { "label": "Live on NaviTools", "value": "TBD" },
+      { "label": "Traceability stack", "value": "FishGrid · RFID per box · auction tie-in · BleuChain" }
+    ],
+    "quote": ""
+  },
+  {
+    "id": "v3",
+    "name": "Z548 — Flamingo",
+    "image": "assets/vessel-flamingo.jpg",
+    "caption": "Zeebrugge · Beam trawler · Built 1994",
+    "source_url": "https://www.vesselfinder.com/vessels/details/9109794",
+    "source_label": "VesselFinder",
+    "rows": [
+      { "label": "Port", "value": "Zeebrugge" },
+      { "label": "Built", "value": "1994" },
+      { "label": "Length × beam", "value": "37.72 × 8.00 m" },
+      { "label": "Gross tonnage", "value": "396 GT" },
+      { "label": "Engine", "value": "1 200 kW" },
+      { "label": "Gear", "value": "Beam trawler (TBB)" },
+      { "label": "IMO / MMSI", "value": "9109794 / 205333000" },
+      { "label": "Callsign", "value": "OPVR" },
+      { "label": "Live on NaviTools", "value": "TBD" },
+      { "label": "Traceability stack", "value": "FishGrid · RFID per box · auction tie-in · BleuChain" }
+    ],
+    "quote": ""
+  },
+  {
+    "id": "v4",
+    "name": "Z483 — Jasmine",
+    "image": "assets/vessel-jasmine.jpg",
+    "caption": "Zeebrugge · Beam trawler · Built 2021",
+    "source_url": "https://www.vesselfinder.com/vessels/details/9896787",
+    "source_label": "VesselFinder",
+    "rows": [
+      { "label": "Port", "value": "Zeebrugge" },
+      { "label": "Built", "value": "2021" },
+      { "label": "Length × beam", "value": "37.95 × 8.50 m" },
+      { "label": "Gross tonnage", "value": "385 GT" },
+      { "label": "Gear", "value": "Beam trawler (TBB)" },
+      { "label": "IMO / MMSI", "value": "9896787 / 205077000" },
+      { "label": "Callsign", "value": "OPBR" },
+      { "label": "Owner / operator", "value": "NV Rederij Nathalie (Vlietinck family)" },
+      { "label": "Builder", "value": "CSR Rotterdam (hull) · Padmos Stellendam (outfitting)" },
+      { "label": "Engine", "value": "ABC DZ 660-830 · 749 kW / 1 018 hp" },
+      { "label": "Live on NaviTools", "value": "TBD" },
+      { "label": "Traceability stack", "value": "FishGrid · RFID per box · auction tie-in · BleuChain" }
+    ],
+    "quote": ""
+  },
+  {
+    "id": "v5",
+    "name": "Z571 — Custos Deus",
+    "image": "assets/vessel-custos-deus.jpg",
+    "caption": "Zeebrugge · Beam trawler · Built 1989",
+    "source_url": "https://www.vesselfinder.com/vessels/details/8817344",
+    "source_label": "VesselFinder",
+    "rows": [
+      { "label": "Port", "value": "Zeebrugge" },
+      { "label": "Built", "value": "1989" },
+      { "label": "Length × beam", "value": "38.93 × 8.00 m" },
+      { "label": "Gross tonnage", "value": "372 GT" },
+      { "label": "Engine", "value": "1 200 kW" },
+      { "label": "Gear", "value": "Beam trawler (TBB)" },
+      { "label": "IMO / MMSI", "value": "8817344 / 205192000" },
+      { "label": "Callsign", "value": "OPWO" },
+      { "label": "Live on NaviTools", "value": "TBD" },
+      { "label": "Traceability stack", "value": "FishGrid · RFID per box · auction tie-in · BleuChain" }
+    ],
+    "quote": ""
+  }
+]

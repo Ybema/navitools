@@ -1,0 +1,29 @@
+# Secrets (covered by global gitignore as well; redundant but explicit)
+.env
+.env.*
+*.env.php
+secrets.py
+credentials.json
+*.pem
+*.key
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build / dependency artefacts
+node_modules/
+dist/
+build/
+
+# Local working folders not part of the published site
+upload/
+source/uploads/
+
+# Heavy or generated state files
+NaviTools.zip
+*.zip
+.image-slots.state.json
+source/.image-slots.state.json

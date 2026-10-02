@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+  <rect width="400" height="300" fill="#0a2542"/>
+  <g stroke="rgba(255,255,255,0.18)" stroke-width="1.5" fill="none">
+    <path d="M 0 240 Q 100 230 200 240 T 400 240"/>
+    <path d="M 0 255 Q 100 245 200 255 T 400 255"/>
+    <path d="M 130 180 L 270 180 L 250 215 L 150 215 Z"/>
+    <rect x="180" y="150" width="50" height="30"/>
+    <line x1="205" y1="100" x2="205" y2="150"/>
+    <circle cx="205" cy="95" r="4"/>
+  </g>
+  <text x="200" y="285" text-anchor="middle" fill="rgba(255,255,255,0.45)" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" letter-spacing="2.5">VESSEL PHOTO PLACEHOLDER</text>
+</svg>
